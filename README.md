@@ -1,4 +1,4 @@
-Code Syles
+Code Styles
 =========
 These are the code styles I adhere by in the projects I work on. I try to follow the official standards as close as possible,
 but most times it's the little things where differences occur; therefore, I adapted my own style based of the languange's
