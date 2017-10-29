@@ -33,7 +33,7 @@ use lib\system\Environment;
  * @uses        \namespace\to\inherited\class
  * @deprecated  Class deprecated since <ISO date format>
  */
-class ClassName extends FrontController
+class Demo extends FrontController
 {
     /**
      * @var integer CONSTANT_INTEGER Description if needed.
