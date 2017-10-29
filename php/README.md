@@ -65,24 +65,10 @@ function demo() {
 }
 ```
 
-### 3.3 Closures
-The only difference to the PSR-2 standard for closures is that there is no space after the ```function``` keyword. The rest is identical.
-
-#### 3.3.1 Example
-```
-$closure = function($param) {
-    // Body
-}
-
-$closureArgs = function($param) use ($arg) {
-    // Body
-}
-```
-
-### 3.4 Classes
+### 3.3 Classes
 Declaration of constants, attributes, and methods of classes.
 
-#### 3.4.1 Constants and Attributes
+#### 3.3.1 Constants and Attributes
 - There must not be an epmty line after the opening brace of a class.
 - Constants are always declared before all other attributes.
 - All attributes, including constants, must always be separated by one empty line.
@@ -93,7 +79,7 @@ Declaration of constants, attributes, and methods of classes.
 - Private attributes always come after protected and are the last attributes before methods.
 - Private attributes must be declared with a leading underscore.
 
-##### 3.4.1.1 Example
+##### 3.3.1.1 Example
 ```
 class ClassName
 {
@@ -126,14 +112,14 @@ class ClassName
 }
 ```
 
-#### 3.4.2 Contstuctors and Methods
+#### 3.3.2 Contstuctors and Methods
 - Constructors are always the first declared method after declaring attributes.
 - If no attributes are declared, then the constructor is the first method of the class.
 - All public methods come before protected and private methods, and are sorted alphanumerically if possible.
 - All methods must be named using camelCase syntax.
 - All methods must have a return type declared in the docblock where void is the default if no return is available.
 
-##### 3.4.2.1 Example
+##### 3.3.2.1 Example
 ```
 class ClassName
 {
@@ -199,13 +185,13 @@ class ClassName
 }
 ```
 
-### 3.5 Comments
+### 3.4 Comments
 Commenting code is an important process of programming. Although code should be written in a self-explanatory manner, it does happen when pieces of code need to be commented for clarification. It is important to understand that DocBlock is used to document the code where commenting is used to comment code out or explain a block of code. The following guidline is a good practice because it makes combining comments for different purposes easy.
 - Using // for comments is required, and must be used for commenting a block of code. If a comment needs to go over multiple lines, then begin each new line of the comment with //.
 - Using # to comment out code line by line is required. This is used to comment out a line, or multiple lines, of code.
 - To comment out a block of code, use the block comment starting with /* and ending with */. Commenting like this guarantees that no comment conflifts with another since will include all comments and commented out lines.
 
-#### 3.5.1 Example
+#### 3.4.1 Example
 ```
 class ClassName
 {
@@ -253,13 +239,13 @@ class ClassName
 }
 ```
 
-### 3.6 Assignments and Operators
+### 3.5 Assignments and Operators
 Assigning values to variables, concatenating strings, and arithmetic operations cause many discussions. Should there be spaces for assigning values, and should there be spaces between operators? This guide defines a standard regarding these issues.
 
-#### 3.6.1 Assignments
+#### 3.5.1 Assignments
 For assigning a value to a variable, there must be spaces before and after the assignment operator. In case of a function or method parameter, there must not be spaces before and after the assigment operator.
 
-##### 3.6.1.1 Example
+##### 3.5.1.1 Example
 ```
 $variable = 'value';
 
@@ -268,10 +254,10 @@ function demo($param=false) {
 }
 ```
 
-#### 3.6.2 Operators
+#### 3.5.2 Operators
 To concatenate strings, then there must always be spaces before and after the concate operator ```.```. All arithmetic must have spaces before and after the operators. In case certain operations have to be visually emphasized, then that operation must be enclosed in parentheses.
 
-##### 3.6.2.1 Example
+##### 3.5.2.1 Example
 ```
 $concat = 'This is' . ' one string.';
 
@@ -284,15 +270,15 @@ $math = 1 + (2 * 3) + 4; // Still 11 due to order of operations
 $math = (1 + 2) * (3 + 4); // 21 due to change in order of operations
 ```
 
-### 3.7 Quotes
+### 3.6 Quotes
 Strings are a very common data-type in PHP, and to assign a string to a variable it must be wrapped in single-quotes. Thinking about how many times programmers use strings, it can become cumbersome to use double-qoutes. That is why strings must always be wrapped in single-quotes.
 
-It is also good practice to use single-quotes to prevent longer processing time due to PHP checking for variables in strings. Although PHP7 is much more performant and systems much more powerful, it is still good practice to reduce the use of double-quotes as much as possible.
+It is also good practice to use single-quotes to prevent longer processing time due to PHP checking for variables in strings. Although PHP7 is much more peformant and systems much more powerful, it is still good practice to reduce the use of double-quotes as much as possible.
 
 Single-quotes must be used when accessing keys in variables. Again, it is to stay consistent with the rest of the quotes and to reduce the strain on the fingers by having to press two keys rather than just one for the quotes.
 There is one exception to the rule and that is for SQL statements which must be wrapped in double-quotes.
 
-#### 3.7.1 Example
+#### 3.6.1 Example
 ```
 $variable = 'string';
 
