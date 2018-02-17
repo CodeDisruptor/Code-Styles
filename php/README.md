@@ -1,11 +1,11 @@
-Coding Syle for PHP
+Coding Style for PHP
 =========
 
 This is the coding style I've been using for my projects.
-The style is based on the PHP-Fig PSR standard with some minor changes for personal liking.
+The style is based on the PHP-Fig PSR standard with some minor changes to my personal liking.
 
 ## 1. PHPDoc Guidelines
-Every file must contain PHPDoc for documentation. My guideline is based on the recommendations of phpDocumentor1 from [phpdoc.org](https://www.phpdoc.org), but is now based on the PHPDoc [fig-standards](https://github.com/phpDocumentor/fig-standards) proposal for PSR-5. I've been documenting my files in a very similar fashion to the proposed fig-standards for years, but have only recently found out about the proposal. See the PSR-5 proposal for more detail.
+Every file MUST contain PHPDoc for documentation. My guideline is based on the recommendations of phpDocumentor1 from [phpdoc.org](https://www.phpdoc.org), but is now based on the PHPDoc [fig-standards](https://github.com/phpDocumentor/fig-standards) proposal for PSR-5. I've been documenting my files in a very similar fashion to the proposed fig-standards for years, but have only recently found out about the proposal. See the PSR-5 proposal for more detail.
 
 ## 2. Conventions Used In This Document
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
@@ -16,17 +16,17 @@ interpreted as described in [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
 Although this guideline is based on the [PSR-1](http://www.php-fig.org/psr/psr-1/) and [PSR-2](http://www.php-fig.org/psr/psr-2/) standards, there are some differences between the two. The differences occur mainly in PSR-2 since this guideline fully agrees with PSR-1. See [PSR-2](http://www.php-fig.org/psr/psr-2/) to understand the differences.
 
 ### 3.1 Overview
-- Indentation type may be tabs or spaces, but must never be mixed.
+- Indentation type MAY be tabs or spaces, but MUST never be mixed.
 - Tabs should be set to 4 spaces length.
-- Once an indentation style is decided on, it must be kept for the project.
-- A file DocBlock must be set for every file, except for entry script.
-- The file DocBlock must come directly after the ```<?php``` tag on a new line.
-- The declared ```namespace``` of the file must come directly after the file DocBlock with one empty line between the DocBlock and namespace.
-- ```use``` must come after the declared ```namespace``` with one empty line between both. An empty line must follow the last ```use``` statement.
-- ```use``` statements should be sorted alphabetically and grouped by main packages when possible.
+- Once an indentation style is decided on, it MUST be kept for the entire project.
+- A file DocBlock MUST be set for every file, except for the entry script.
+- The file DocBlock MUST come directly after the ```<?php``` tag on a new line.
+- The declared ```namespace``` of the file MUST come directly after the file DocBlock with one empty line between the DocBlock and namespace.
+- ```use``` MUST come after the declared ```namespace``` with one empty line between both. An empty line MUST follow the last ```use``` statement.
+- ```use``` statements should be sorted alphabetically and grouped by packages when possible.
 
 #### 3.1.1 Example
-```
+```php
 <?php
 /**
  * Filename.php
@@ -41,7 +41,7 @@ Although this guideline is based on the [PSR-1](http://www.php-fig.org/psr/psr-1
  *
  * @package     \namespace\to\package
  * @author      Author Name <author@email.com>
- * @copyright   Year(in 4 digit numer) Copyright holder
+ * @copyright   Year(in 4 digit number) Copyright holder
  * @license     https://spdx.org/licenses/PHP-3.01.html PHP License PHP-3.01
  * @since       <ISO date format>
  */
@@ -59,7 +59,14 @@ use lib\system\Environment;
 Functions are declared the same as methods of a class, except that the opening brace for a function is on the same line.
 
 #### 3.2.1 Example
-```
+```php
+/**
+ * Short description
+ *
+ * Long description if needed.
+ *
+ * @return void
+ */
 function demo() {
     // Body
 }
@@ -69,58 +76,58 @@ function demo() {
 Declaration of constants, attributes, and methods of classes.
 
 #### 3.3.1 Constants and Attributes
-- There must not be an epmty line after the opening brace of a class.
+- There MUST NOT be an empty line after the opening brace of a class.
 - Constants are always declared before all other attributes.
-- All attributes, including constants, must always be separated by one empty line.
-- All attributes must have access visibility declared in DocBlock.
-- All attributes must be named using camelCase syntax.
+- All attributes, including constants, MUST always be separated by one empty line.
+- All attributes MUST have access visibility declared in DocBlock.
+- All attributes MUST be named using camelCase syntax.
 - Public attributes always come before protected and private attributes, but after all declared constants.
-- Protected attributes always come after public attributes, but before private.
+- Protected attributes always come after public, but before private attributes.
 - Private attributes always come after protected and are the last attributes before methods.
-- Private attributes must be declared with a leading underscore.
+- Private attributes MUST be declared with a leading underscore.
 
 ##### 3.3.1.1 Example
-```
+```php
 class ClassName
 {
     /**
      * @var integer CONSTANT_INTEGER Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     const CONSTANT_INTEGER = 15;
 
     /**
      * @access public
      * @var string $string Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     public $string = 'string';
 
     /**
      * @access protected
      * @var float $float Description in needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     protected $float = 15.2;
 
     /**
      * @access private
-     * @var bool $_bool Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @var boolean $_bool Description if needed.
+     * @since <ISO date format>
      */
     private $_bool = true;
 }
 ```
 
-#### 3.3.2 Contstuctors and Methods
+#### 3.3.2 Constructors and Methods
 - Constructors are always the first declared method after declaring attributes.
 - If no attributes are declared, then the constructor is the first method of the class.
-- All public methods come before protected and private methods, and are sorted alphanumerically if possible.
-- All methods must be named using camelCase syntax.
-- All methods must have a return type declared in the docblock where void is the default if no return is available.
+- All public methods come before protected and private methods, and are sorted alpha-numerically if possible.
+- All methods MUST be named using camelCase syntax.
+- All methods MUST have a return type declared in the DocBlock where void is the default if no return is available.
 
 ##### 3.3.2.1 Example
-```
+```php
 class ClassName
 {
     /**
@@ -130,7 +137,7 @@ class ClassName
      *
      * @access public
      * @param array $config Demo configuration array passed into class when instantiated.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function __construct($config)
@@ -145,7 +152,7 @@ class ClassName
      *
      * @access public
      * @param string $string Demo string passed into method.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function setString($string)
@@ -161,7 +168,7 @@ class ClassName
      * @access protected
      * @param integer $number1
      * @param integer $number2
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return integer
      */
     public function calculate($number1, $number2)
@@ -175,7 +182,7 @@ class ClassName
      * Long description if needed.
      *
      * @access private
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return string
      */
     public function _tableName()
@@ -186,13 +193,13 @@ class ClassName
 ```
 
 ### 3.4 Comments
-Commenting code is an important process of programming. Although code should be written in a self-explanatory manner, it does happen when pieces of code need to be commented for clarification. It is important to understand that DocBlock is used to document the code where commenting is used to comment code out or explain a block of code. The following guidline is a good practice because it makes combining comments for different purposes easy.
-- Using // for comments is required, and must be used for commenting a block of code. If a comment needs to go over multiple lines, then begin each new line of the comment with //.
-- Using # to comment out code line by line is required. This is used to comment out a line, or multiple lines, of code.
-- To comment out a block of code, use the block comment starting with /* and ending with */. Commenting like this guarantees that no comment conflifts with another since will include all comments and commented out lines.
+Commenting code is an important process of programming. Although code should be written in a self-explanatory manner, it does happen when pieces of code need to be commented for clarification. It is important to understand that DocBlock is used to document the code where commenting is used to comment code out or explain a block of code. The following guideline is a good practice because it makes combining comments for different purposes easy.
+- Using ```//``` for comments is required, and MUST be used for commenting a block of code. If a comment needs to go over multiple lines, then begin each new line of the comment with ```//```.
+- Using ```#``` to comment out code line by line is required. This is used to comment out a line, or multiple lines, of code.
+- To comment out a block of code, use the block comment starting with ```/*``` and ending with ```*/```. Commenting like this guarantees that no comment conflicts with another since it will include all comments and commented out lines.
 
 #### 3.4.1 Example
-```
+```php
 class ClassName
 {
     /**
@@ -201,7 +208,7 @@ class ClassName
      * Long description if needed.
      *
      * @access public
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function commentingDemo()
@@ -243,10 +250,10 @@ class ClassName
 Assigning values to variables, concatenating strings, and arithmetic operations cause many discussions. Should there be spaces for assigning values, and should there be spaces between operators? This guide defines a standard regarding these issues.
 
 #### 3.5.1 Assignments
-For assigning a value to a variable, there must be spaces before and after the assignment operator. In case of a function or method parameter, there must not be spaces before and after the assigment operator.
+For assigning a value to a variable, there MUST be spaces before and after the assignment operator. In case of a function or method parameter, there MUST NOT be spaces before and after the assignment operator.
 
 ##### 3.5.1.1 Example
-```
+```php
 $variable = 'value';
 
 function demo($param=false) {
@@ -255,10 +262,10 @@ function demo($param=false) {
 ```
 
 #### 3.5.2 Operators
-To concatenate strings, then there must always be spaces before and after the concate operator ```.```. All arithmetic must have spaces before and after the operators. In case certain operations have to be visually emphasized, then that operation must be enclosed in parentheses.
+To concatenate strings, then there MUST always be spaces before and after the concatenate operator ```.```. All arithmetic MUST have spaces before and after the operators. In case certain operations have to be visually emphasized, then that operation MUST be enclosed in parentheses.
 
 ##### 3.5.2.1 Example
-```
+```php
 $concat = 'This is' . ' one string.';
 
 $math = 1 + 2 * 3 + 4; // 11 due to order of operations
@@ -271,15 +278,15 @@ $math = (1 + 2) * (3 + 4); // 21 due to change in order of operations
 ```
 
 ### 3.6 Quotes
-Strings are a very common data-type in PHP, and to assign a string to a variable it must be wrapped in single-quotes. Thinking about how many times programmers use strings, it can become cumbersome to use double-qoutes. That is why strings must always be wrapped in single-quotes.
+Strings are a very common data-type in PHP, and to assign a string to a variable it MUST be wrapped in single-quotes. Thinking about how many times programmers use strings, it can become cumbersome to use double-quotes. That is why strings MUST always be wrapped in single-quotes.
 
-It is also good practice to use single-quotes to prevent longer processing time due to PHP checking for variables in strings. Although PHP7 is much more peformant and systems much more powerful, it is still good practice to reduce the use of double-quotes as much as possible.
+It is also good practice to use single-quotes to prevent longer processing time due to PHP checking for variables in strings. Although PHP7 is much more performant, and systems much more powerful, it is still good practice to reduce the use of double-quotes as much as possible.
 
-Single-quotes must be used when accessing keys in variables. Again, it is to stay consistent with the rest of the quotes and to reduce the strain on the fingers by having to press two keys rather than just one for the quotes.
-There is one exception to the rule and that is for SQL statements which must be wrapped in double-quotes.
+Single-quotes MUST be used when accessing keys in variables. Again, it is to stay consistent with the rest of the quotes and to reduce the strain on the fingers by having to press two keys rather than just one for the quotes.
+There is one exception to the rule and that is for SQL statements which MUST be wrapped in double-quotes.
 
 #### 3.6.1 Example
-```
+```php
 $variable = 'string';
 
 $array['key'];
