@@ -37,30 +37,30 @@ class Demo extends FrontController
 {
     /**
      * @var integer CONSTANT_INTEGER Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     const CONSTANT_INTEGER = 15;
 
     /**
      * @access public
      * @var string $string Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     public $string = 'string';
 
     /**
      * @access protected
      * @var float $float Description in needed.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      */
     protected $float = 15.2;
 
     /**
      * @access private
-     * @var bool $_bool Description if needed.
-     * @since Month(3 letters) Day, Year
+     * @var bool $bool Description if needed.
+     * @since <ISO date format>
      */
-    private $_bool = true;
+    private $bool = true;
 
     /**
      * Short Description
@@ -69,12 +69,12 @@ class Demo extends FrontController
      *
      * @access public
      * @param array $config Demo configuration array passed into class when instantiated.
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function __construct($config)
     {
-        $this->_config = $config;
+        $this->config = $config;
     }
 
     /**
@@ -84,7 +84,7 @@ class Demo extends FrontController
      *
      * @access public
      * @param string $string
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function setString($string)
@@ -98,7 +98,7 @@ class Demo extends FrontController
      * Long Description if needed.
      *
      * @access public
-     * @since Month(3 letters) Day, Year
+     * @since <ISO date format>
      * @return void
      */
     public function commentingDemo()
@@ -121,8 +121,8 @@ class Demo extends FrontController
              }
          }*/
 
-        // Previous code had a glitch. Testing this code to see if the previous code will need to be deleted.
-        // The glitch seemed to be in the else statement.
+        // Previous code had a glitch. Testing this code to see if the previous code will
+        // need to be deleted. The glitch seemed to be in the else statement.
         foreach ($this->_config as $key => $value) {
             if ($key === 'database') {
                 // Set database singleton
